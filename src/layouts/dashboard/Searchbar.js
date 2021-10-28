@@ -19,12 +19,9 @@ const APPBAR_MOBILE = 64;
 const APPBAR_DESKTOP = 92;
 
 const SearchbarStyle = styled('div')(({ theme }) => ({
-  top: 0,
-  left: 0,
-  zIndex: 99,
   width: '100%',
   display: 'flex',
-  position: 'absolute',
+  position: 'relative',
   alignItems: 'center',
   height: APPBAR_MOBILE,
   backdropFilter: 'blur(6px)',
@@ -41,26 +38,7 @@ const SearchbarStyle = styled('div')(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function Searchbar() {
-  const [isOpen, setOpen] = useState(false);
-
-  const handleOpen = () => {
-    setOpen((prev) => !prev);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   return (
-    <ClickAwayListener onClickAway={handleClose}>
-      <div>
-        {!isOpen && (
-          <IconButton onClick={handleOpen}>
-            <Icon icon={searchFill} width={20} height={20} />
-          </IconButton>
-        )}
-
-        <Slide direction="down" in={isOpen} mountOnEnter unmountOnExit>
           <SearchbarStyle>
             <Input
               autoFocus
@@ -78,12 +56,9 @@ export default function Searchbar() {
               }
               sx={{ mr: 1, fontWeight: 'fontWeightBold' }}
             />
-            <Button variant="contained" onClick={handleClose}>
+            <Button variant="contained">
               Search
             </Button>
           </SearchbarStyle>
-        </Slide>
-      </div>
-    </ClickAwayListener>
   );
 }
