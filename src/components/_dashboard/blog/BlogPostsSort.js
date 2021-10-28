@@ -11,8 +11,8 @@ BlogPostsSort.propTypes = {
 const useStyles = makeStyles ({
   sort: {
     position: 'absolute',
-    top: '135px',
-    left: '500px',
+    top: '12%',
+    left: '25%',
   },
   item:{
     borderRadius: '60%'
