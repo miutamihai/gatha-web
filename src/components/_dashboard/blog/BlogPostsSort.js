@@ -17,7 +17,7 @@ const useStyles = makeStyles ({
     },
     '& .css-ij9k62-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline':{
     borderColor: 'black',
-      borderWidth: '3px'
+      borderWidth: '1px'
     },
     '& .css-ij9k62-MuiInputBase-root-MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
       borderWidth: '1px',
@@ -30,7 +30,7 @@ export default function BlogPostsSort({ options, onSort }) {
   const classes = useStyles()
   
   return (
-    <TextField select size="big" value="latest" onChange={onSort} className={classes.sort}>
+    <TextField select size="small" value="latest" onChange={onSort} className={classes.sort}>
       {options.map((option) => (
         <MenuItem key={option.value} value={option.value}>
           {option.label}
