@@ -27,7 +27,7 @@ const SearchStyle = styled(OutlinedInput)(({ theme }) => ({
         easing: theme.transitions.easing.easeInOut,
         duration: theme.transitions.duration.shorter
     }),
-    '&.Mui-focused': { width: '100%', boxShadow: theme.customShadows.z8 },
+    '&.Mui-focused': { width: '100%', boxShadow: theme.customShadows.z8, borderColor: { }},
     '& fieldset': {
         borderWidth: `2px !important`,
         borderColor: `black !important`

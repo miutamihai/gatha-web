@@ -23,8 +23,8 @@ const Search = () => {
     return (
         <Page title="Search">
             <Container >
-                <BlogPostsSort options={SORT_OPTIONS} />
                 <Card>
+                    <BlogPostsSort options={SORT_OPTIONS} />
                     <Table headColumns={headColumns} data={data}/>
                 </Card>
             </Container>
