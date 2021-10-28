@@ -1,16 +1,12 @@
 import { Icon } from '@iconify/react';
-import { useState } from 'react';
 import searchFill from '@iconify/icons-eva/search-fill';
 // material
 import { styled, alpha } from '@mui/material/styles';
 import {
   Box,
   Input,
-  Slide,
   Button,
   InputAdornment,
-  ClickAwayListener,
-  IconButton
 } from '@mui/material';
 
 // ----------------------------------------------------------------------
