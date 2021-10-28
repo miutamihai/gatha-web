@@ -37,7 +37,7 @@ const Employee = () => {
                         Observations:
                     </Typography>
                     <TextField
-                        sx={{width: '60%'}}
+                        sx={{width: '100%'}}
                         fullWidth
                         multiline
                         defaultValue={employee.observations.description}
