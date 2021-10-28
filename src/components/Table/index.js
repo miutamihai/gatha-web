@@ -13,7 +13,7 @@ import {
 import SearchNotFound from "../SearchNotFound";
 import { filter } from "lodash";
 import { useState } from "react";
-import {Body} from "./body";
+import { Body } from "./body";
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -44,7 +44,7 @@ function applySortFilter(array, comparator, query) {
     return stabilizedThis.map((el) => el[0]);
 }
 
-export const Table = ({ headColumns, data}) => {
+export const Table = ({ headColumns, data, searchEnabled}) => {
     const [page, setPage] = useState(0);
     const [order, setOrder] = useState('asc');
     const [orderBy, setOrderBy] = useState('name');
@@ -78,8 +78,9 @@ export const Table = ({ headColumns, data}) => {
     
     return (
             <Card>
-                <Search filter={filter}
-                        onFilter={handleFilter}/>
+                {searchEnabled && <Search filter={filter}
+                                          onFilter={handleFilter}/>
+                }
                 <Scrollbar>
                     <TableContainer>
                         <MuiTable>
@@ -91,7 +92,8 @@ export const Table = ({ headColumns, data}) => {
                             <Body emptyRows={emptyRows}
                                   filtered={filtered}
                                   page={page}
-                                  rowsPerPage={rowsPerPage}/>
+                                  rowsPerPage={rowsPerPage}
+                                  bodyColumns={headColumns}/>
                             {isNotFound && (
                                 <TableBody>
                                     <TableRow>

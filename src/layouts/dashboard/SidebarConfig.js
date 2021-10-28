@@ -1,7 +1,5 @@
 import { Icon } from '@iconify/react';
 import pieChart2Fill from '@iconify/icons-eva/pie-chart-2-fill';
-import peopleFill from '@iconify/icons-eva/people-fill';
-import shoppingBagFill from '@iconify/icons-eva/shopping-bag-fill';
 import fileTextFill from '@iconify/icons-eva/file-text-fill';
 import lockFill from '@iconify/icons-eva/lock-fill';
 import personAddFill from '@iconify/icons-eva/person-add-fill';
@@ -9,6 +7,7 @@ import alertTriangleFill from '@iconify/icons-eva/alert-triangle-fill';
 import searchFill from "@iconify/icons-eva/search-fill";
 import personOutline from "@iconify/icons-eva/person-outline";
 import monitorOutline from "@iconify/icons-eva/monitor-outline";
+import barChart2Outline from "@iconify/icons-eva/bar-chart-2-outline"
 
 // ----------------------------------------------------------------------
 
@@ -36,9 +35,9 @@ const sidebarConfig = [
     icon: getIcon(personOutline)
   },
   {
-    title: 'blog',
-    path: '/dashboard/blog',
-    icon: getIcon(fileTextFill)
+    title: 'status',
+    path: '/dashboard/status',
+    icon: getIcon(barChart2Outline)
   },
   {
     title: 'login',
