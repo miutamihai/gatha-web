@@ -5,7 +5,6 @@ import { Table } from "../../components/Table/index";
 import mockedData from '../../_mocks_/data'
 import { BlogPostsSort } from "../../components/_dashboard/blog/index";
 
-
 const headColumns = [
     { id: 'type', label: 'Type'},
     { id: 'name', label: 'Name'},
@@ -22,13 +21,13 @@ const Search = () => {
     
     return (
         <Page title="Search">
-            <Container >
+            <Container>
                 <Card>
                     <BlogPostsSort options={SORT_OPTIONS} />
                     <Table headColumns={headColumns} data={data} searchEnabled/>
                 </Card>
             </Container>
-        </ Page>
+        </Page>
     )
 }
 
