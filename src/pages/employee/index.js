@@ -9,6 +9,7 @@ const Employee = () => {
 
     return (
         <Page title="Employee">
+            <Container>
             <Grid container sx={{paddingLeft:'40px'}}>
                 <Grid item xs={2}>
                     <Box alignContent='flex-start'>
@@ -54,6 +55,7 @@ const Employee = () => {
                 </Container>
                 </Grid>
             </Grid>
+            </Container>
         </Page>
     )
 }
