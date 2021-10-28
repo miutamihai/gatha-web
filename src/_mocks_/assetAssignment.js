@@ -5,16 +5,13 @@ const assetAssignment = [...Array(6)].map((_, index) => ({
     type: faker.vehicle.manufacturer(),
     name: faker.vehicle.vehicle(),
     serialNumber: faker.datatype.number(),
-    startDate: faker.date.past(),
+    startDate: faker.name.findName(),
     returnDate: sample([
-        faker.date.future(),
+        faker.name.findName(),
         null,
         null,
     ]),
-    deadlineDate: sample([
-        faker.date.future(),
-        faker.date.recent()
-    ]),
+    deadlineDate: faker.name.findName(),
     createdBy:{
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),

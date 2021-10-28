@@ -9,6 +9,7 @@ import Search from './pages/search';
 import Asset from "./pages/asset";
 import Employee from "./pages/employee";
 import Status from "./pages/status";
+import Visitor from "./pages/visitor";
 
 // ----------------------------------------------------------------------
 
@@ -23,7 +24,8 @@ export default function Router() {
         { path: 'search', element: <Search /> },
         { path: 'asset', element: <Asset /> },
         { path: 'employee', element: <Employee /> },
-        { path: 'status', element: <Status /> }
+        { path: 'status', element: <Status /> },
+        { path: 'visitor', element: <Visitor /> }
       ]
     },
     {

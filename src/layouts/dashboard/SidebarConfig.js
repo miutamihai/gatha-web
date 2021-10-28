@@ -1,13 +1,13 @@
 import { Icon } from '@iconify/react';
 import pieChart2Fill from '@iconify/icons-eva/pie-chart-2-fill';
-import fileTextFill from '@iconify/icons-eva/file-text-fill';
 import lockFill from '@iconify/icons-eva/lock-fill';
 import personAddFill from '@iconify/icons-eva/person-add-fill';
 import alertTriangleFill from '@iconify/icons-eva/alert-triangle-fill';
 import searchFill from "@iconify/icons-eva/search-fill";
 import personOutline from "@iconify/icons-eva/person-outline";
 import monitorOutline from "@iconify/icons-eva/monitor-outline";
-import barChart2Outline from "@iconify/icons-eva/bar-chart-2-outline"
+import barChart2Outline from "@iconify/icons-eva/bar-chart-2-outline";
+import peopleOutline from "@iconify/icons-eva/people-outline";
 
 // ----------------------------------------------------------------------
 
@@ -38,6 +38,11 @@ const sidebarConfig = [
     title: 'status',
     path: '/dashboard/status',
     icon: getIcon(barChart2Outline)
+  },
+  {
+    title: 'visitor',
+    path: '/dashboard/visitor',
+    icon: getIcon(peopleOutline)
   },
   {
     title: 'login',

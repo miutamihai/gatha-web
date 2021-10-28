@@ -23,17 +23,8 @@ const Status = () => {
         ...rest,
     }));
     
-    const activeAssetAssigment = assetAssigment.filter(asset => asset.returnDate).map(({deadlineDate, startDate, ...rest}) => ({
-        startDate: startDate.toDateString(),
-        deadlineDate: deadlineDate.toDateString(),
-        ...rest,
-    }))
-
-    const historyAssetAssigment = assetAssigment.filter(asset => !asset.returnDate).map(({deadlineDate, startDate, ...rest}) => ({
-        startDate: startDate.toDateString(),
-        returnDate: deadlineDate.toDateString(),
-        ...rest,
-    }))
+    const activeAssetAssigment = assetAssigment.filter(asset => asset.returnDate)
+    const historyAssetAssigment = assetAssigment.filter(asset => !asset.returnDate)
 
 
     return (
