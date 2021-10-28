@@ -6,16 +6,27 @@ import GlobalStyles from './theme/globalStyles';
 // components
 import ScrollToTop from './components/ScrollToTop';
 import { BaseOptionChartStyle } from './components/charts/BaseOptionChart';
+// apollo
+import {
+    ApolloProvider,
+} from "@apollo/client";
+import { Provider } from 'react-redux'
+import { client } from './start-up/client'
+import { configureStore } from './start-up/createStore'
 
 // ----------------------------------------------------------------------
 
 export default function App() {
-  return (
-    <ThemeConfig>
-      <ScrollToTop />
-      <GlobalStyles />
-      <BaseOptionChartStyle />
-      <Router />
-    </ThemeConfig>
-  );
+    return (
+        <Provider store={configureStore()}>
+            <ApolloProvider client={client}>
+                <ThemeConfig>
+                    <ScrollToTop/>
+                    <GlobalStyles/>
+                    <BaseOptionChartStyle/>
+                    <Router/>
+                </ThemeConfig>
+            </ApolloProvider>
+        </Provider>
+    );
 }
