@@ -4,11 +4,11 @@ import LogoOnlyLayout from './layouts/LogoOnlyLayout';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import DashboardApp from './pages/DashboardApp';
-import Products from './pages/Products';
 import Blog from './pages/Blog';
 import NotFound from './pages/Page404';
 import Search from './pages/search';
 import Asset from "./pages/asset/index";
+import Employee from "./pages/employee";
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ export default function Router() {
         { path: 'app', element: <DashboardApp /> },
         { path: 'search', element: <Search /> },
         { path: 'asset', element: <Asset /> },
-        { path: 'products', element: <Products /> },
+        { path: 'employee', element: <Employee /> },
         { path: 'blog', element: <Blog /> }
       ]
     },
