@@ -25,7 +25,7 @@ export default function Header({
                 {headLabel.map((headCell) => (
                     <TableCell
                         key={headCell.id}
-                        align="center"
+                        align="left"
                         sortDirection={orderBy === headCell.id ? order : false}
                     >
                         <TableSortLabel

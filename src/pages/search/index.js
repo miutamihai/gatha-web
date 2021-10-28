@@ -25,7 +25,7 @@ const Search = () => {
             <Container >
                 <Card>
                     <BlogPostsSort options={SORT_OPTIONS} />
-                    <Table headColumns={headColumns} data={data}/>
+                    <Table headColumns={headColumns} data={data} searchEnabled/>
                 </Card>
             </Container>
         </ Page>
