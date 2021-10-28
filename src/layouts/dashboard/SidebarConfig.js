@@ -6,6 +6,7 @@ import fileTextFill from '@iconify/icons-eva/file-text-fill';
 import lockFill from '@iconify/icons-eva/lock-fill';
 import personAddFill from '@iconify/icons-eva/person-add-fill';
 import alertTriangleFill from '@iconify/icons-eva/alert-triangle-fill';
+import searchFill from "@iconify/icons-eva/search-fill";
 
 // ----------------------------------------------------------------------
 
@@ -16,6 +17,11 @@ const sidebarConfig = [
     title: 'dashboard',
     path: '/dashboard/app',
     icon: getIcon(pieChart2Fill)
+  },
+  {
+    title: 'search',
+    path: '/dashboard/search',
+    icon: getIcon(searchFill)
   },
   {
     title: 'user',
