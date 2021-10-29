@@ -16,6 +16,8 @@ import {OutlinedInput} from "@mui/material";
 import {Chip} from "@mui/material";
 import {MenuItem} from "@mui/material";
 import {LoadingButton} from "@mui/lab";
+import {useDispatch} from "react-redux";
+import { actions } from './slices/create'
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -38,7 +40,8 @@ const getResponibles = list => {
 
 export const Visitor = () => {
     const employee = useSelector(selector)
-
+    
+    const dispatch = useDispatch()
     const navigate = useNavigate();
     const VisitorSchema = Yup.object().shape({
         firstName: Yup.string().required('First name is required'),
@@ -51,12 +54,18 @@ export const Visitor = () => {
         initialValues: {
             firstName: '',
             lastName: '',
-            serialNumber: '',
-            expectedDate: '',
+            personalId: '',
+            phone: '',
+            email: '',
+            responsible: ''
         },
         validationSchema: VisitorSchema,
         onSubmit: () => {
-            navigate('/dashboard', { replace: true });
+            const names = formik?.values?.responsible?.split(' ')
+            const input = { ...formik.values, responsible:{connect:{ where:{firstName: names[0], lastName: names[1]}}}}
+            console.log(input,'input')
+            dispatch(actions.attempt({input}))
+            navigate('/dashboard/app')
         }
     });
 
@@ -107,17 +116,28 @@ export const Visitor = () => {
                             <TextField
                                 sx={{width: '70%'}}
                                 label="Serial number"
-                                {...getFieldProps('serialNumber')}
+                                {...getFieldProps('personalId')}
                             />
                         </Stack>
                         <Stack direction={'row'} spacing={3} justifyContent={'space-between'} sx={{paddingBottom: '20px'}}>
                             <Typography variant='h5' sx={{alignSelf: 'center', paddingLeft: '10px'}}>
-                                Expected date
+                                Phone
                             </Typography>
                             <TextField
                                 sx={{width: '70%'}}
-                                label="Expected date"
-                                {...getFieldProps('serialNumber')}
+                                label="Phone"
+                                {...getFieldProps('phone')}
+                            />
+                        </Stack>
+
+                        <Stack direction={'row'} spacing={3} justifyContent={'space-between'} sx={{paddingBottom: '20px'}}>
+                            <Typography variant='h5' sx={{alignSelf: 'center', paddingLeft: '10px'}}>
+                                Email
+                            </Typography>
+                            <TextField
+                                sx={{width: '70%'}}
+                                label="Email"
+                                {...getFieldProps('email')}
                             />
                         </Stack>
 
@@ -136,6 +156,7 @@ export const Visitor = () => {
                                     <Chip key={selected} label={selected} />
                                 )}
                                 MenuProps={MenuProps}
+                                {...getFieldProps('responsible')}
                             >
                                 {fullNames.map((name) => (
                                     <MenuItem
@@ -165,7 +186,6 @@ export const Visitor = () => {
                             type="submit"
                             variant="contained"
                             loading={isSubmitting}
-                            onSubmit={() => null}
                         >
                             Submit visit
                         </LoadingButton>
