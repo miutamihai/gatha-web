@@ -25,8 +25,8 @@ const sidebarConfig = [
     icon: getIcon(searchFill)
   },
   {
-    title: 'asset',
-    path: '/dashboard/asset',
+    title: 'assets',
+    path: '/dashboard/assets',
     icon: getIcon(monitorOutline)
   },
   {
@@ -35,8 +35,8 @@ const sidebarConfig = [
     icon: getIcon(personOutline)
   },
   {
-    title: 'status',
-    path: '/dashboard/status',
+    title: 'history',
+    path: '/dashboard/history',
     icon: getIcon(barChart2Outline)
   },
   {

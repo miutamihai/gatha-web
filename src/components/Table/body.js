@@ -4,17 +4,17 @@ import { TableBody } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import {useCallback} from "react";
 
-const useOnClick = () => {
+const useOnClick = (path) => {
     const navigate = useNavigate()
     
     return useCallback(id => {
-        navigate(`/dashboard/employee/${id}`)
+        navigate(`/dashboard/${path}/${id}`)
     },[navigate])
 }
 
-export const Body = ({ page, rowsPerPage, filtered, emptyRows, bodyColumns, clickable}) => {
+export const Body = ({ page, rowsPerPage, filtered, emptyRows, bodyColumns, clickable, path}) => {
    
-    const onClick = useOnClick()
+    const onClick = useOnClick(path)
     
     return (
         <TableBody>
