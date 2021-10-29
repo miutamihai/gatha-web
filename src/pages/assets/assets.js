@@ -6,20 +6,21 @@ import {Table} from "../../components/Table/index";
 import React from "react";
 
 const headColumns = [
-    { id: 'firstName', label: 'First name'},
-    { id: 'lastName', label: 'Last name'},
+    { id: 'type', label: 'Type'},
+    { id: 'description', label: 'Description'},
+    { id: 'serialNumber', label: 'Serial number'},
 ];
 
-export const Employee = () => {
-    const employee = useSelector(selector);
+export const Assets = () => {
+    const assets = useSelector(selector);
 
     return (<Page>
         <Container>
             <Card>
-                <Table headColumns={headColumns} data={employee} searchEnabled clickable path='/employee'/>
+                <Table headColumns={headColumns} data={assets} searchEnabled clickable path='/asset'/>
             </Card>
         </Container>
     </Page>)
 }
 
-const selector = ({userReducer}) => userReducer.get.users;
+const selector = ({assetReducer}) => assetReducer.get.assets;

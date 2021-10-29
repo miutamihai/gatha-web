@@ -11,6 +11,7 @@ import Employees from "./pages/employees";
 import Status from "./pages/status";
 import Visitor from "./pages/visitor";
 import Employee from './pages/employee';
+import Assets from "./pages/assets";
 
 // ----------------------------------------------------------------------
 
@@ -23,10 +24,11 @@ export default function Router() {
         { element: <Navigate to="/dashboard/app" replace /> },
         { path: 'app', element: <DashboardApp /> },
         { path: 'search', element: <Search /> },
-        { path: 'asset', element: <Asset /> },
+        { path: 'assets', element: <Assets /> },
+        { path: 'asset/:id', element: <Asset /> },
         { path: 'employees', element: <Employees /> },
         { path: 'employee/:id', element: <Employee /> },
-        { path: 'status', element: <Status /> },
+        { path: 'history', element: <Status /> },
         { path: 'visitor', element: <Visitor /> }
       ]
     },

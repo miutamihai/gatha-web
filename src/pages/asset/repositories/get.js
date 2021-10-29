@@ -19,6 +19,10 @@ export const getQuery = gql`
             title
             description
             picture
+            createdBy{
+                firstName
+                lastName
+            }
         }
     }
 `
