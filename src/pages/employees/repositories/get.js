@@ -39,6 +39,10 @@ export const getQuery = gql`
                 description
                 serialNumber
             }
+            respondsFor{
+                firstName
+                lastName
+            }
         }
     }
 `
