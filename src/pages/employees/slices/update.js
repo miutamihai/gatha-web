@@ -2,18 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     attempt: null,
-    created: null,
+    updated: [],
     error: null,
 }
 
 const attempt = (state, {payload}) => ({...state, attempt: payload})
-const success = (state, {payload}) => ({...state, created: payload})
+const success = (state, {payload}) => ({...state, updated: payload})
 const failure = (state, {payload}) => ({...state, error: payload})
 const reset = () => ({...initialState})
 
-export const create = createSlice({
+export const update = createSlice({
     initialState,
-    name: 'createUser',
+    name: 'updateUser',
     reducers: {
         attempt,
         success,
@@ -22,4 +22,4 @@ export const create = createSlice({
     },
 })
 
-export const { actions } = create
+export const { actions } = update

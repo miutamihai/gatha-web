@@ -12,7 +12,7 @@ export const get = parameter => from(client.query({ query: getQuery, variables: 
 export const getQuery = gql`
     query getAsset($where: AssetWhere) {
         assets(where: $where) {
-            entityId
+            id
             type
             serialNumber
             inventoryId

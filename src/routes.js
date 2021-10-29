@@ -7,9 +7,10 @@ import DashboardApp from './pages/DashboardApp';
 import NotFound from './pages/Page404';
 import Search from './pages/search';
 import Asset from "./pages/asset";
-import Employee from "./pages/employee";
+import Employees from "./pages/employees";
 import Status from "./pages/status";
 import Visitor from "./pages/visitor";
+import Employee from './pages/employee';
 
 // ----------------------------------------------------------------------
 
@@ -23,7 +24,8 @@ export default function Router() {
         { path: 'app', element: <DashboardApp /> },
         { path: 'search', element: <Search /> },
         { path: 'asset', element: <Asset /> },
-        { path: 'employee', element: <Employee /> },
+        { path: 'employees', element: <Employees /> },
+        { path: 'employee/:id', element: <Employee /> },
         { path: 'status', element: <Status /> },
         { path: 'visitor', element: <Visitor /> }
       ]

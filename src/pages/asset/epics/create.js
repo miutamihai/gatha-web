@@ -3,10 +3,12 @@ import { ofType } from "redux-observable";
 import { mergeMap } from "rxjs";
 import { repository } from "../repositories";
 import { catchError } from "rxjs/operators";
+import {map} from "rxjs/operators";
+import {of} from "rxjs";
 
 export const create = action$ => action$.pipe(ofType(actions.attempt))
     .pipe(mergeMap(({ payload }) => createAsset(payload)))
 
 const createAsset = payload => repository.create(payload)
-    .pipe(mergeMap(actions.success))
-    .pipe(catchError(actions.failure))
+    .pipe(map(actions.success))
+    .pipe(catchError(error => (of(actions.failure(error)))))

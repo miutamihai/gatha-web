@@ -12,12 +12,12 @@ export const get = parameter => from(client.query({ query: getQuery, variables: 
 export const getQuery = gql`
     query getDepartment($where: DepartmentWhere) {
         departments(where: $where) {
-            entityId
+            id
             title
             description
             timestamp
             responsible {
-                entityId
+                id
                 companyId
                 personalId
                 firstName

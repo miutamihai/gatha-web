@@ -13,7 +13,7 @@ export const createQuery = gql`
     mutation createAsset($input: [AssetCreateInput!]!) {
         createAssets(input: $input) {
             assets {
-                entityId
+                id
                 type
                 serialNumber
                 inventoryId

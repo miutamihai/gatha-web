@@ -12,7 +12,7 @@ export const get = parameter => from(client.query({ query: getQuery, variables: 
 export const getQuery = gql`
     query getObservation($where: ObservationWhere) {
         observations(where: $where) {
-            entityId
+            id
             description
         }
     }

@@ -12,7 +12,7 @@ export const get = parameter => from(client.query({ query: getQuery, variables: 
 export const getQuery = gql`
     query getUser($where: UserWhere) {
         users(where: $where) {
-            entityId
+            id
             personalId
             companyId
             firstName
@@ -22,12 +22,12 @@ export const getQuery = gql`
             picture
             timestamp
             department {
-                entityId
+                id
                 title
                 description
             }
             observations {
-                entityId
+                id
                 description
             }
         }

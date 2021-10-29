@@ -13,7 +13,7 @@ export const createQuery = gql`
     mutation createUser($input: [UserCreateInput!]!) {
         createUsers(input: $input) {
             users {
-                entityId
+                id
                 personalId
                 companyId
                 firstName
@@ -23,7 +23,7 @@ export const createQuery = gql`
                 picture
                 timestamp
                 department {
-                    entityId
+                    id
                 }
             }
         }

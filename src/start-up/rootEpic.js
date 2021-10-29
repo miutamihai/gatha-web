@@ -1,6 +1,6 @@
 import { combineEpics } from "redux-observable";
 
-import { userEpics } from "../pages/users/epics";
+import { userEpics } from "../pages/employees/epics";
 import { departmentEpics } from "../pages/departments/epics";
 import { visitorEpics } from "../pages/visitor/epics";
 import { assetEpics } from "../pages/asset/epics";
