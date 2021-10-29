@@ -1,25 +1,33 @@
+import {useSelector} from "react-redux";
 import Page from "../../components/Page";
 import {Container} from "@mui/material";
 import {Grid} from "@mui/material";
 import {Box} from "@mui/material";
 import {Typography} from "@mui/material";
-import {TextField} from "@mui/material";
-import {LoadingButton} from "@mui/lab";
-import {useSelector} from "react-redux";
+import {Table} from "../../components/Table/index";
 
-export const Employee = () => {
-    const employee = useSelector(selector);
+const headColumns = [
+    { id: 'type', label: 'Type'},
+    { id: 'description', label: 'Description'},
+    { id: 'serialNumber', label: 'Serial number'},
+    { id: 'superior', label: 'Superior'},
+]
 
+export const Status = () => {
+    const employee = useSelector(selector)
+    const hasAssigned = employee[0] ? employee[0]?.hasAssigned : []
+    console.log(hasAssigned, 'cevaaa')
     return (
-        <Page title="Employee">
+        <Page title={'Status'}>
             <Container>
-                <Grid container sx={{ paddingLeft:'40px' }}>
+                <Grid container sx={{paddingLeft: '40px'}}>
                     <Grid item xs={2}>
                         <Box alignContent='flex-start'>
-                            <img src={employee[0]?.picture} alt={'profile picture'}/>
+                            <img src={'https://cdn.pixabay.com/photo/2014/07/09/10/04/man-388104_960_720.jpg'}
+                                 alt={'profile picture'}/>
                         </Box>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={8}>
                         <Container>
                             <Typography variant="h4" gutterBottom>
                                 {employee[0]?.firstName} {employee[0]?.lastName}
@@ -36,25 +44,10 @@ export const Employee = () => {
                             <Typography variant="h6" gutterBottom sx={{paddingTop: '50px'}}>
                                 Superior: {employee[0]?.createdBy?.firstName} {employee[0]?.createdBy?.lastName}
                             </Typography>
-                            <Typography variant="h6" gutterBottom sx={{paddingTop: '50px'}}>
-                                Observations:
+                            <Typography variant="h6" gutterBottom sx={{paddingTop: '50px', textDecoration: 'underline'}}>
+                                History
                             </Typography>
-                            <TextField
-                                sx={{width: '100%'}}
-                                fullWidth
-                                multiline
-                                defaultValue={employee[0]?.observations?.description}
-                            />
-                            <Typography variant="h6" gutterBottom sx={{marginTop: '20px'}}>
-                                <LoadingButton
-                                    fullWidth
-                                    size="large"
-                                    type="submit"
-                                    variant="contained"
-                                >
-                                    Save observations
-                                </LoadingButton>
-                            </Typography>
+                            <Table headColumns={headColumns} data={hasAssigned}/>
                         </Container>
                     </Grid>
                 </Grid>
@@ -63,4 +56,4 @@ export const Employee = () => {
     )
 }
 
-const selector = ({ userReducer }) => userReducer.get.users;
+const selector = ({userReducer}) => userReducer.get.users;
