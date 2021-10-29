@@ -6,20 +6,23 @@ import { client } from "../../../start-up/client";
 import { from } from "rxjs";
 
 export const create = parameter => from(client.mutate({ mutation: createQuery, variables: parameter, fetchPolicy: 'no-cache' }))
-    .pipe(map(response => response.data.createAssets.assets))
+    .pipe(map(response => response.data.createVisitors.visitors))
     .pipe(catchError(error => throwError(error.networkError.result)))
 
 export const createQuery = gql`
-    mutation createAsset($input: [AssetCreateInput!]!) {
-        createAssets(input: $input) {
-            assets {
-                entityId
-                type
-                serialNumber
-                inventoryId
-                title
-                description
-                picture
+    mutation createVisitors($input: [VisitorCreateInput!]!) {
+        createVisitors(input: $input) {
+            visitors {
+                id
+                firstName
+                lastName
+                personalId
+                phone
+                email
+                responsible {
+                    firstName
+                    lastName
+                }
             }
         }
     }
