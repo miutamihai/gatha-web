@@ -13,12 +13,12 @@ export const createQuery = gql`
     mutation CreateDepartments($input: [DepartmentCreateInput!]!) {
         createDepartments(input: $input) {
             departments {
-                entityId
+                id
                 title
                 description
                 timestamp
                 responsible {
-                    entityId
+                    id
                     personalId
                     companyId
                     firstName

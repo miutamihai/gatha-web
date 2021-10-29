@@ -13,7 +13,7 @@ export const updateQuery = gql`
     mutation updateObservation($update: ObservationUpdateInput, $where: ObservationWhere) {
         updateObservations(update: $update, where: $where) {
             observations {
-                entityId
+                id
                 description
             }
         }

@@ -44,7 +44,7 @@ function applySortFilter(array, comparator, query) {
     return stabilizedThis.map((el) => el[0]);
 }
 
-export const Table = ({ headColumns, data, searchEnabled}) => {
+export const Table = ({ headColumns, data, searchEnabled, clickable}) => {
     const [page, setPage] = useState(0);
     const [order, setOrder] = useState('asc');
     const [orderBy, setOrderBy] = useState('name');
@@ -93,7 +93,8 @@ export const Table = ({ headColumns, data, searchEnabled}) => {
                                   filtered={filtered}
                                   page={page}
                                   rowsPerPage={rowsPerPage}
-                                  bodyColumns={headColumns}/>
+                                  bodyColumns={headColumns}
+                                  clickable/>
                             {isNotFound && (
                                 <TableBody>
                                     <TableRow>

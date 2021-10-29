@@ -13,7 +13,7 @@ export const updateQuery = gql`
     mutation updateUser($update: UserUpdateInput) {
         updateUsers(update: $update) {
             users {
-                entityId
+                id
                 personalId
                 companyId
                 firstName
@@ -23,7 +23,7 @@ export const updateQuery = gql`
                 picture
                 timestamp
                 department {
-                    entityId
+                    id
                 }
             }
         }

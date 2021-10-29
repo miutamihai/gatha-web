@@ -13,7 +13,7 @@ export const createQuery = gql`
     mutation createObservation($input: [ObservationCreateInput!]!) {
         createObservations(input: $input) {
             observations {
-                entityId
+                id
                 description
             }
         }

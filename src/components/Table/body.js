@@ -1,13 +1,27 @@
 import { TableRow } from "@mui/material";
 import { TableCell } from "@mui/material";
 import { TableBody } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import {useCallback} from "react";
 
-export const Body = ({ page, rowsPerPage, filtered, emptyRows, bodyColumns}) => {
+const useOnClick = () => {
+    const navigate = useNavigate()
+    
+    return useCallback(id => {
+        navigate(`/dashboard/employee/${id}`)
+    },[navigate])
+}
+
+export const Body = ({ page, rowsPerPage, filtered, emptyRows, bodyColumns, clickable}) => {
+   
+    const onClick = useOnClick()
+    
     return (
         <TableBody>
             {filtered
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row) => {
+                    console.log(row)
                     return (
                         <TableRow
                             hover
@@ -16,8 +30,8 @@ export const Body = ({ page, rowsPerPage, filtered, emptyRows, bodyColumns}) => 
                         >
                             {bodyColumns.map(column => {
                                 return (
-                                    <TableCell key={Math.random()}>{row[column.id]}</TableCell>
-                                )
+                                        <TableCell onClick={() => clickable && onClick(row.id)} key={Math.random()}>{row[column.id]}</TableCell>
+                                    )
                             })}
                         </TableRow>
                     );

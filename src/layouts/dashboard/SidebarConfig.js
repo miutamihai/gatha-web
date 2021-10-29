@@ -30,8 +30,8 @@ const sidebarConfig = [
     icon: getIcon(monitorOutline)
   },
   {
-    title: 'employee',
-    path: '/dashboard/employee',
+    title: 'employees',
+    path: '/dashboard/employees',
     icon: getIcon(personOutline)
   },
   {

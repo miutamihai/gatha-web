@@ -13,7 +13,7 @@ export const updateQuery = gql`
     mutation updateAsset($update: AssetUpdateInput, $where: AssetWhere) {
         updateAssets(update: $update, where: $where) {
             assets {
-                entityId
+                id
                 type
                 serialNumber
                 inventoryId

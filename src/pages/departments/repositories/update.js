@@ -13,7 +13,7 @@ export const updateQuery = gql`
     mutation updateDepartment($update: DepartmentUpdateInput, $where: DepartmentWhere) {
         updateDepartments(update: $update, where: $where) {
             departments {
-                entityId
+                id
                 title
                 description
                 timestamp
