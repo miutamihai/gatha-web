@@ -30,6 +30,15 @@ export const getQuery = gql`
                 id
                 description
             }
+            createdBy{
+                firstName
+                lastName
+            }
+            hasAssigned{
+                type
+                description
+                serialNumber
+            }
         }
     }
 `
